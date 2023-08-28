@@ -1,5 +1,6 @@
 # www.detzner.info
 
+ - v0.6 - Update Conferences 2023, PhD Thesis, fix spacing
  - v0.5 - Update Conferences 2021, Twitter Link, fix spacing
  - v0.4 - Update Conferences for 2020 and 2021, Sections 'about me' and 'disclaimer'
  - v0.3.1 - Typo fix
