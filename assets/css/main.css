@@ -2042,7 +2042,7 @@ img[height] {
 @media (min-width: 1024px) {
   .c-header__header,
   .c-header__content {
-    height: 100vh;
+    height: 25vh;
   }
   .c-header__inner-header,
   .c-header__inner-content {
