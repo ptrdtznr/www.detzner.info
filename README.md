@@ -1,5 +1,6 @@
 # www.detzner.info
 
+ - v0.7.0 - Add new publications, swap picture, clean up
  - v0.6.1 - Remove Duplicate Text, Content and adjust vertical spacing
  - v0.6.0 - Update Conferences 2023, PhD Thesis, fix spacing
  - v0.5.0 - Update Conferences 2021, Twitter Link, fix spacing
