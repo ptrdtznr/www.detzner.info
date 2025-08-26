@@ -12,6 +12,7 @@
 !content/
 !data/
 !i18n/
+!tools/
 !layouts/
 !*.toml
 !*.json
