@@ -1,0 +1,60 @@
+{{- $contextType := printf "%T" . -}}
+{{- $isShortcode := (eq $contextType "*hugolib.ShortcodeWithPage") -}}
+
+{{- /* Title */}}
+{{- $title := "" -}}
+
+{{- if $isShortcode }}
+  {{- $title = .Get "title" | default ( i18n "pubs_title" ) -}}
+{{ else }}
+  {{- $title = i18n "pubs_title" -}}
+{{ end }}
+
+
+<section
+  id="pubs"
+  class="section section--border-bottom rad-animation-group"
+>
+
+
+  <div class="container">
+    <div class="row rad-fade-down">
+      <div class="col-12">
+        <h2>{{ $title }}</h2>
+        📄 Conference/ Journal | 💡 Patent |  🎓 Ph.D. Thesis
+        <div class="row pt-2 pt-md-4">
+        {{ range where .Site.RegularPages "Type" "pubs" }}
+          <div class="col-12 col-sm-6 mb-4 mb-sm-0">
+            <div class="pubs">
+              <div class="education__date">{{ .Params.author | markdownify }}</div>
+              <div class="education__title">{{ .Params.title }}</div> 
+              {{ if eq .Params.pubtype "inproceedings" }} 
+               📄 </i> {{ .Params.pubtitle }} </i>
+              [<a href="http://doi.org/{{ .Params.doi }}" target="_blank">@{{ .Params.publisher }}</a>]
+            
+              {{ else if eq .Params.pubtype "article" }} 
+                📖 {{ .Params.pubtitle }} </i>
+                [<a href="http://doi.org/{{ .Params.doi }}" target="_blank">@{{ .Params.publisher }}</a>]
+              
+              {{ else if eq .Params.pubtype "patent" }}
+                💡 {{ .Params.pubtitle }} </i>
+                {{ $url := urls.Parse .Params.externalLink }}	
+                {{ $name := split $url.Host "." }}
+                {{ $domain :=  index $name 1 }}
+                {{ $subdomain :=  index $name 0 }}
+                {{ .Params.number }}  [<a href="{{ .Params.externalLink }}" target="_blank">{{ $domain | strings.FirstUpper }} {{ $subdomain | strings.FirstUpper }}</a>]
+              {{ else if eq .Params.pubtype "phdthesis" }}
+                🎓 {{ .Params.pubtitle }} </i>
+                [<a href="{{ .Params.externalLink }}" target="_blank">@{{ .Params.publisher }}</a>]
+              {{ end }}
+              <br />
+              <br />
+              <br />&nbsp;
+            </div>
+          </div>
+        {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

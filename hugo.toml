@@ -1,0 +1,226 @@
+baseURL = "https://beta.detzner.info"
+title = "Peter Detzner"
+languageCode = "en"
+
+[markup.goldmark.renderer]
+unsafe = true
+
+# Exclude footer section from generating list pages (index.html and index.xml)
+[outputs]
+  page = ["HTML"]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  term = ["HTML", "RSS"]
+  footer = []
+
+# Explicitly prevent the footer section from generating any output
+[outputFormats.footerSection]
+  # Empty configuration to prevent any output
+
+# Specifically disable generation of these kinds for the footer content
+disableKinds = ["footerSection", "RSS"]
+
+[module]
+[[module.imports]]
+path = "github.com/zetxek/adritian-free-hugo-theme"
+
+## Base mounts - so your site's assets are available
+[[module.mounts]]
+source = "archetypes"
+target = "archetypes"
+
+[[module.mounts]]
+source = "assets"
+target = "assets"
+
+[[module.mounts]]
+source = "i18n"
+target = "i18n"
+
+[[module.mounts]]
+source = "layouts"
+target = "layouts"
+
+[[module.mounts]]
+source = "static"
+target = "static"
+
+# The following mounts are required for the theme to be able to load bootstrap
+# Remember also to copy the theme's `package.json` to your site, and run `npm install`
+[[module.mounts]]
+source = "node_modules/bootstrap/scss"
+target = "assets/scss/bootstrap"
+
+[[module.mounts]]
+source = "node_modules/bootstrap/dist/js"
+target = "assets/js/bootstrap"
+
+[[module.mounts]]
+source = "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+target = "assets/js/vendor/bootstrap.bundle.min.js"
+
+[[module.mounts]]
+source = "node_modules/bootstrap-print-css/css/bootstrap-print.css"
+target = "assets/css/bootstrap-print.css"
+
+
+[params]
+title = 'Peter Detzner | Roboticist & Software Engineer'
+description = 'Peter Detzner | Roboticist & Software Engineer'
+images = ['/img/og-img.png']
+sections = [
+  "about",
+  "pubs",
+]
+# If you want to display an image logo in the header, you can add it here
+# logo = '/img/hugo.svg'
+
+homepageExperienceCount = 4
+homepagePublicationCount = 6
+
+[params.analytics]
+## Analytics parameters.
+### Supported so far: Vercel (Page Insights, Analytics)
+### And Google (Tag Manager, Analytics)
+
+# controls vercel page insights - disabled by default
+# to enable, just set to true
+vercelPageInsights = false
+vercelAnalytics = false
+
+# google analytics and tag manager. to enable, set "enabled" to true
+# and add the tracking code (UA-something for analytics, GTM-something for tag manager)
+[params.analytics.googleAnalytics]
+code = "UA-XXXXX-Y"
+enabled = false
+[params.analytics.googleTagManager]
+code = "GTM-XXXXX"
+enabled = false
+
+[build]
+[build.buildStats]
+disableClasses = false
+disableIDs = false
+disableTags = false
+enable = true
+
+[params.languages.selector.disable]
+footer = true
+header = false
+mobileHeader = true
+
+[languages]
+[languages.en]
+disabled = false
+languageCode = 'en'
+languageDirection = 'ltr'
+languageName = 'English'
+title = ''
+weight = 0
+
+[languages.en.menus]
+# [[languages.en.menus.header]]
+# name = "Home" 
+# URL = "/"
+# weight = 1
+[[languages.en.menus.header]]
+name = 'Home'
+URL = '#showcase'
+weight = 2
+[[languages.en.menus.header]]
+name = 'Education'
+URL = '#education'
+weight = 3
+[[languages.en.menus.header]]
+name = "Experience"
+URL = '#experience-single'
+weight = 4
+[[languages.en.menus.header]]
+name = "Publications"
+URL = "#pubs"
+weight = 6
+
+
+# [[languages.en.menus.footer]]
+# name = "Home"
+# URL = "/"
+# weight = 1
+
+[[languages.en.menus.footer]]
+name = "Top"
+URL = "#showcase"
+weight = 1
+
+[[languages.en.menus.footer]]
+name = 'Education'
+URL = '#education'
+weight = 2
+
+[[languages.en.menus.footer]]
+name = "Experience"
+URL = '#experience-single'
+weight = 3
+
+[[languages.en.menus.footer]]
+name = "Publications"
+URL = "#experience-single"
+weight = 4
+
+[[languages.en.menus.footer]]
+name = "Imprint"
+URL = "/imprint"
+weight = 5
+
+
+
+
+# Plugins
+[params.plugins]
+
+# CSS Plugins
+[[params.plugins.css]]
+URL = "css/custom.css"
+[[params.plugins.css]]
+URL = "css/adritian-icons.css"
+## Print css
+[[params.plugins.css]]
+URL = "css/bootstrap-print.css"
+
+# JS Plugins
+[[params.plugins.js]]
+URL = "js/rad-animations.js"
+[[params.plugins.js]]
+URL = "js/sticky-header.js"
+[[params.plugins.js]]
+URL = "js/library/fontfaceobserver.js"
+
+# SCSS Plugins
+[[params.plugins.scss]]
+URL = "scss/adritian.scss"
+
+
+# theme/color style 
+[params.colorTheme]
+
+## the following configuration would disable automatic theme selection
+#  [params.colorTheme.auto]
+#    disable = true
+#  [params.colorTheme.forced]
+#    theme = "dark"
+
+## the following parameter will disable theme override in the footer
+#  [params.colorTheme.selector.disable]
+#  footer = false
+
+
+[params.colorTheme.selector.disable]
+footer = true
+header = false
+mobileHeader = false
+## by default we allow override AND automatic selection
+ 
+
+
+[params.experience]
+showJobCard = false # Set to false to hide the job card

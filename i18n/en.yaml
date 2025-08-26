@@ -1,0 +1,73 @@
+## Meta tags
+- id: "meta_title"
+  translation: "Peter Detzner | Roboticist & Software Engineer"
+- id: "meta_description"
+  translation: "Peter Detzner | Roboticist & Software Engineer"
+- id: "meta_keywords"
+  translation: "hugo, detzner, mobile robotics, website, personal site, portfolio"
+- id: "meta_author"
+  translation: "Peter Detzner"
+#- id: "meta_image"
+#  translation: "/img/general/og-image.jpg"
+
+## Header
+
+- id: "logo_alt"
+  translation: "No logo"
+
+- id: "logo_text1"
+  translation: "Peter"
+
+- id: "logo_text2"
+  translation: "Detzner"
+
+## General
+- id: "skipToMainContent"
+  translation: "Skip to main content"
+
+- id: "toggle_navigation"
+  translation: "Toggle navigation"
+
+## Footer
+- id: "footer_notice"
+  translation: "© Peter Detzner 2025 | <a href='https://github.com/zetxek/adritian-free-hugo-theme' target='_blank'>Adritian Free Hugo Theme</a>"
+
+- id: "language"
+  translation: "Language"
+
+- id: "toggle_theme"
+  translation: "Toggle theme"
+
+- id: "theme_light"
+  translation: "☀️ Light"
+- id: "theme_dark"
+  translation: "🌑 Dark"
+- id: "theme_auto"
+  translation: "✨ Auto"
+
+## Homepage head title
+- id: "head_title"
+  translation: "Peter Detzner | Roboticist & Software Engineer"
+
+- id: "head_description"
+  translation: "Peter Detzner | Roboticist & Software Engineer"
+  
+
+## Blog
+- id: "read_more"
+  translation: "Read more"
+
+- id: "published_on"
+  translation: "Published on "
+
+- id: "continue_reading"
+  translation: "Continue reading"
+
+## 404 Page
+- id: "404_title"
+  translation: "Page not found"
+- id: "404_description"  
+  translation: "Sorry, but the page you were looking for could not be found."
+- id: "404_button"
+  translation: "Back to homepage"
+
